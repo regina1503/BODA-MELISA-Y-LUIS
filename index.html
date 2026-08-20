@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda Melisa & Luis 💌</title>
+
+    <!-- Open Graph / WhatsApp, Facebook, etc. -->
+    <meta property="og:title" content="Nuestra Boda Melisa & Luis 💌">
+    <meta property="og:description" content="Nuestra Boda Melisa & Luis 💌">
+    <meta property="og:image" content="https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/portada%2011.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nuestra Boda Melisa & Luis 💌">
+    <meta name="twitter:description" content="Nuestra Boda Melisa & Luis 💌">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/portada%2011.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            overflow-x: hidden;
+        }
+        body.locked {
+            overflow-y: hidden;
+            height: 100vh;
+        }
+        .hidden-page {
+            display: none !important;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .page {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        #page1 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA10.jpg'); }
+        #page2 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA.jpg'); }
+        #page3 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA11.jpg'); }
+        #page4 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA21.jpg'); }
+        #page5 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA12.jpg'); }
+        #page6 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA14.jpg'); }
+        #page7 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA19.jpg'); }
+        #page8 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA15.jpg'); }
+        #page9 { background-image: url('https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA16.jpg'); }
+
+        /* Top Header Text for Page 1 */
+        #topHeaderCard {
+            position: absolute;
+            top: 10%;
+            width: 85%;
+            max-width: 320px;
+            text-align: center;
+            padding: 12px 16px;
+        }
+        .header-glow {
+            text-shadow:
+                0 0 12px rgba(0,0,0,0.6),
+                0 0 24px rgba(0,0,0,0.49),
+                0 0 36px rgba(0,0,0,0.35),
+                0 2px 6px rgba(0,0,0,0.63);
+        }
+
+        /* Page 1 Message Card */
+        #audioGreetingCard {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 18px 14px;
+            border-radius: 12px;
+            text-align: center;
+            position: absolute;
+            bottom: 8%;
+            width: 75%;
+            max-width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            cursor: pointer;
+            border: 1px solid #2c2c2c;
+            background: #fff;
+            color: #2c2c2c;
+            border-radius: 6px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover:not(:disabled) {
+            background: #2c2c2c;
+            color: #fff;
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .music-player {
+            color: #d4af37;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            position: absolute;
+            top: 92%;
+            transform: translateY(-50%);
+        }
+        .player-line {
+            width: 76.5%;
+            height: 1.5px;
+            background: #d4af37;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        .player-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            background: transparent;
+            padding: 0 4px;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        .controls span {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .controls span:hover {
+            transform: scale(1.15);
+        }
+
+        /* Countdown Timer on Page 3 (NORMA11.jpg) */
+        .countdown-container {
+            position: absolute;
+            bottom: 10%;
+            width: 90%;
+            max-width: 360px;
+            text-align: center;
+        }
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+        .countdown-unit {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 10px;
+            padding: 10px 6px;
+            width: 62px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+        }
+        .countdown-label {
+            font-size: 9px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 2px;
+        }
+
+        /* Location Button on Page 7 (NORMA14.jpg) */
+        .location-container {
+            position: absolute;
+            bottom: 6%;
+            width: 100%;
+            text-align: center;
+        }
+        .location-btn {
+            background: rgba(212, 175, 55, 0.9);
+            color: #fff;
+            border: 1px solid #d4af37;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .location-btn:hover {
+            background: #fff;
+            color: #d4af37;
+        }
+
+        /* RSVP Form on Page 7 (NORMA19.jpg) */
+        #rsvpCard {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 20px 18px;
+            border-radius: 12px;
+            text-align: center;
+            position: absolute;
+            width: 82%;
+            max-width: 320px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            transform: translateY(15%);
+        }
+        #rsvpCard h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            color: #b68019;
+            margin-bottom: 10px;
+        }
+        .rsvp-field {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .rsvp-field label {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 0.05em;
+            color: #b68019;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+        }
+        .rsvp-field input[type="text"],
+        .rsvp-field input[type="number"] {
+            width: 100%;
+            padding: 7px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            background: rgba(255,255,255,0.85);
+            color: #2c2c2c;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .rsvp-radio-group {
+            display: flex;
+            gap: 14px;
+            margin-top: 2px;
+        }
+        .rsvp-radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: #b68019;
+            text-transform: none;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+        .rsvp-radio-group input {
+            accent-color: #d4af37;
+        }
+        #rsvpSubmitBtn {
+            display: block;
+            width: 100%;
+            padding: 9px;
+            margin-top: 6px;
+            cursor: pointer;
+            border: 1px solid #d4af37;
+            background: #d4af37;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+        }
+        #rsvpSubmitBtn:hover {
+            background: #fff;
+            color: #d4af37;
+        }
+    </style>
+</head>
+<body class="locked">
+
+    <audio id="audioGreeting" preload="auto">
+        <source src="https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/WhatsApp%20Audio%202026-08-19%20at%206.47.43%20PM.mpeg" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Page 1: Greeting & Main Entry with NORMA10.jpg background -->
+    <section id="page1" class="page">
+        <!-- Top Header with 30% larger white text -->
+        <div id="topHeaderCard">
+            <div class="font-serif text-[20.3px] uppercase tracking-[0.2em] text-white font-semibold mb-1 header-glow">Nuestra Boda</div>
+            <div class="font-serif italic text-[30.4px] text-white header-glow">Melisa & Luis</div>
+        </div>
+
+        <div id="audioGreetingCard">
+            <h3 class="font-serif text-[13px] text-stone-900 mb-1">Un Mensaje Especial Para Ti</h3>
+            <div class="w-full h-[1px] bg-stone-800 my-1.5 relative">
+                <span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/70 px-1 text-[10px] text-stone-800">♥</span>
+            </div>
+
+            <div class="mt-2">
+                <button id="mainActionBtn" class="btn" onclick="handleMainAction()">Reproducir Saludo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2: NORMA.jpg -->
+    <section id="page2" class="page hidden-page">
+        <div class="music-player">
+            <div class="player-line"><span class="player-heart">♥</span></div>
+            <div class="controls">
+                <span onclick="restartGreeting()" title="Reiniciar">&#8635;</span>
+                <span onclick="skipTime(-5)" title="Retroceder">&#9665;</span>
+                <span id="page2PlayIcon" onclick="toggleGreetingPlayback()" title="Reproducir/Pausa">&#9655;</span>
+                <span onclick="skipTime(5)" title="Avanzar">&#9655;</span>
+                <span onclick="toggleLoop()" title="Repetir">&#8644;</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: NORMA11.jpg -->
+    <section id="page3" class="page hidden-page">
+        <div class="countdown-container">
+            <div class="font-serif italic text-white text-[15px] mb-3 drop-shadow-md">Para el gran día</div>
+            <div class="countdown-grid">
+                <div class="countdown-unit">
+                    <span id="cdDays" class="countdown-number">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cdHours" class="countdown-number">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cdMinutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-unit">
+                    <span id="cdSeconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4: NORMA20.jpg -->
+    <section id="page4" class="page hidden-page"></section>
+
+    <!-- Page 5: NORMA12.jpg with Location Button -->
+    <section id="page5" class="page hidden-page">
+        <div class="location-container">
+            <a href="https://maps.app.goo.gl/f1VYrKCbyjeE3DSt8" target="_blank" class="location-btn">Ver Ubicación</a>
+        </div>
+    </section>
+
+    <!-- Page 6: NORMA14.jpg -->
+    <section id="page6" class="page hidden-page"></section>
+
+    <!-- Page 7: NORMA19.jpg with RSVP Form -->
+    <section id="page7" class="page hidden-page">
+        <div id="rsvpCard">
+            <h3>Confirma tu Asistencia</h3>
+            <div class="rsvp-field">
+                <label for="rsvpName">Nombre completo</label>
+                <input type="text" id="rsvpName" placeholder="Escribe tu nombre completo">
+            </div>
+            <div class="rsvp-field">
+                <label>¿Asistirás?</label>
+                <div class="rsvp-radio-group">
+                    <label><input type="radio" name="rsvpAttend" value="Sí asistiré" checked> Sí</label>
+                    <label><input type="radio" name="rsvpAttend" value="No podré asistir"> No</label>
+                </div>
+            </div>
+            <div class="rsvp-field">
+                <label for="rsvpGuests">Número de personas</label>
+                <input type="number" id="rsvpGuests" min="1" value="1">
+            </div>
+            <button id="rsvpSubmitBtn" onclick="sendRsvp()">Enviar por WhatsApp</button>
+        </div>
+    </section>
+
+    <!-- Page 8: NORMA15.jpg -->
+    <section id="page8" class="page hidden-page"></section>
+
+    <!-- Page 9: NORMA16.jpg -->
+    <section id="page9" class="page hidden-page"></section>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Preload all images instantly for zero loading delay
+        const imageUrls = [
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA10.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA11.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA21.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA12.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA14.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA15.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA19.jpg',
+            'https://raw.githubusercontent.com/regina1503/BODA-MELISA-Y-LUIS/main/NORMA16.jpg'
+        ];
+        imageUrls.forEach(url => {
+            const img = new Image();
+            img.src = url;
+        });
+
+        const audioGreeting = document.getElementById('audioGreeting');
+        const mainActionBtn = document.getElementById('mainActionBtn');
+        const page2PlayIcon = document.getElementById('page2PlayIcon');
+
+        let state = 'idle';
+        let timerStarted = false;
+
+        function handleMainAction() {
+            if (state === 'idle') {
+                state = 'playing';
+                mainActionBtn.innerText = 'Reproduciendo saludo...';
+                mainActionBtn.disabled = true;
+                
+                audioGreeting.play().catch(err => {
+                    console.log("Audio play error:", err);
+                    state = 'idle';
+                    mainActionBtn.innerText = 'Reproducir Saludo';
+                    mainActionBtn.disabled = false;
+                });
+
+                if (!timerStarted) {
+                    timerStarted = true;
+                    setTimeout(() => {
+                        state = 'ready';
+                        mainActionBtn.innerText = 'Abrir Invitación';
+                        mainActionBtn.disabled = false;
+                    }, 7000);
+                }
+            } else if (state === 'ready') {
+                openInvitation();
+            }
+        }
+
+        audioGreeting.addEventListener('ended', function() {
+            state = 'ready';
+            mainActionBtn.innerText = 'Abrir Invitación';
+            mainActionBtn.disabled = false;
+            if (page2PlayIcon) page2PlayIcon.innerHTML = '&#9655;';
+        });
+
+        audioGreeting.addEventListener('play', function() {
+            if (page2PlayIcon) page2PlayIcon.innerHTML = '&#10074;&#10074;';
+        });
+
+        audioGreeting.addEventListener('pause', function() {
+            if (page2PlayIcon) page2PlayIcon.innerHTML = '&#9655;';
+        });
+
+        function openInvitation() {
+            // Ocultar la página del saludo: ya no debe volver a verse
+            document.getElementById('page1').classList.add('hidden-page');
+
+            // Revelar el resto de las páginas, que hasta ahora estaban ocultas
+            document.getElementById('page2').classList.remove('hidden-page');
+            document.getElementById('page3').classList.remove('hidden-page');
+            document.getElementById('page4').classList.remove('hidden-page');
+            document.getElementById('page5').classList.remove('hidden-page');
+            document.getElementById('page6').classList.remove('hidden-page');
+            document.getElementById('page7').classList.remove('hidden-page');
+            document.getElementById('page8').classList.remove('hidden-page');
+            document.getElementById('page9').classList.remove('hidden-page');
+
+            // Permitir scroll en el body ahora que hay más contenido
+            document.body.classList.remove('locked');
+
+            // Sincronizar el ícono del reproductor de la página 2 con el estado real del audio
+            if (page2PlayIcon) {
+                page2PlayIcon.innerHTML = audioGreeting.paused ? '&#9655;' : '&#10074;&#10074;';
+            }
+
+            // Iniciar la cuenta regresiva de la página 3
+            startCountdown();
+
+            // Ir al inicio (ahora la página 2 queda primera, ya que la 1 está oculta)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleGreetingPlayback() {
+            if (audioGreeting.paused) {
+                audioGreeting.play().catch(e => console.log("Play error:", e));
+            } else {
+                audioGreeting.pause();
+            }
+        }
+
+        function restartGreeting() {
+            audioGreeting.currentTime = 0;
+            audioGreeting.play().catch(e => console.log("Play error:", e));
+        }
+
+        function skipTime(seconds) {
+            audioGreeting.currentTime = Math.min(Math.max(audioGreeting.currentTime + seconds, 0), audioGreeting.duration || 0);
+        }
+
+        function toggleLoop() {
+            audioGreeting.loop = !audioGreeting.loop;
+            console.log(audioGreeting.loop ? "Repetición activada" : "Repetición desactivada");
+        }
+
+        // Formulario de confirmación de asistencia (RSVP) vía WhatsApp
+        function sendRsvp() {
+            const nameInput = document.getElementById('rsvpName');
+            const guestsInput = document.getElementById('rsvpGuests');
+            const attendRadios = document.getElementsByName('rsvpAttend');
+
+            const name = nameInput.value.trim();
+            const guests = guestsInput.value;
+
+            if (!name) {
+                alert('Por favor escribe tu nombre completo.');
+                nameInput.focus();
+                return;
+            }
+            if (!guests || guests < 1) {
+                alert('Por favor indica el número de personas.');
+                guestsInput.focus();
+                return;
+            }
+
+            let attend = 'Sí asistiré';
+            for (const radio of attendRadios) {
+                if (radio.checked) {
+                    attend = radio.value;
+                    break;
+                }
+            }
+
+            const message =
+                'Confirmación de asistencia - Boda Melisa y Luis\n' +
+                'Nombre completo: ' + name + '\n' +
+                'Asistencia: ' + attend + '\n' +
+                'Número de personas: ' + guests;
+
+            const phoneNumber = '523329486360';
+            const whatsappUrl = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Cuenta regresiva a la boda: 24 de octubre de 2026, 4:30 p.m.
+        const weddingDate = new Date('2026-10-24T16:30:00');
+        let countdownInterval = null;
+
+        function startCountdown() {
+            if (countdownInterval) return; // ya está corriendo
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            let diff = weddingDate - now;
+
+            const cdDays = document.getElementById('cdDays');
+            const cdHours = document.getElementById('cdHours');
+            const cdMinutes = document.getElementById('cdMinutes');
+            const cdSeconds = document.getElementById('cdSeconds');
+
+            if (diff <= 0) {
+                clearInterval(countdownInterval);
+                cdDays.textContent = '00';
+                cdHours.textContent = '00';
+                cdMinutes.textContent = '00';
+                cdSeconds.textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            cdDays.textContent = String(days).padStart(2, '0');
+            cdHours.textContent = String(hours).padStart(2, '0');
+            cdMinutes.textContent = String(minutes).padStart(2, '0');
+            cdSeconds.textContent = String(seconds).padStart(2, '0');
+        }
+    </script>
+</body>
+</html>
